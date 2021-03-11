@@ -1,0 +1,63 @@
+﻿{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "implements(Microsoft.IDialog)",
+  "title": "Send Activity",
+  "description": "Respond with a dynamically generated activity.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "Id",
+      "description": "Optional id for the dialog"
+    },
+    "disabled": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Disabled",
+      "description": "Optional condition which if true will disable this action.",
+      "examples": [
+        "user.age > 3"
+      ]
+    },
+    "activityProperty": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Activity Property",
+      "description": "Property path for a dynamically generated activity to send."
+    },
+    "operationType": {
+      "title": "Type of operation",
+      "description": "Type of send operation to perform.",
+      "default": "send",
+      "oneOf": [
+        {
+          "type": "string",
+          "title": "Enum",
+          "description": "Standard operation type.",
+          "default": "send",
+          "enum": [
+            "send",
+            "update",
+            "replace",
+            "delete",
+            "directMessage"
+          ]
+        },
+        {
+          "$ref": "schema:#/definitions/equalsExpression"
+        }
+      ]
+    },
+    "activityIdProperty": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Activity ID Property",
+      "description": "Optional name of the property used to remember the ID of the sent activity.",
+      "default": "turn.activity.replyToId"
+    },
+    "directMessageToProperty": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Direct Message To Property",
+      "description": "The Channel Account info of the user that should be direct messaged.",
+      "default": "turn.activity.from"
+    }
+  },
+  "required": [ "operationType" ]
+}

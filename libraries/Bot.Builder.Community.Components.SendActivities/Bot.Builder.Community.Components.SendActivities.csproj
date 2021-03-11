@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RepositoryUrl>https://github.com/Stevenic/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Components.SendActivities</RepositoryUrl>
+    <PackageIcon>package-icon.png</PackageIcon>
+    <PackageLicenseUrl />
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <Description>Composer actions for sending a variety of activity and card types. These actions support advanced features like the ability to replace or update previously sent activities.</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/Stevenic/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Components.SendActivities</PackageProjectUrl>
+    <Version>1.0.3-preview</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>bf-component</PackageTags>
+    <ContentTargetFolders>content</ContentTargetFolders>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EnterpriseLibrary.TransientFaultHandling" Version="6.0.1304" />
+    <PackageReference Include="Microsoft.Bot.Builder" Version="4.11.1" />
+    <PackageReference Include="Microsoft.Bot.Connector" Version="4.11.1" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs" Version="4.11.1" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs.Adaptive" Version="4.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="**/*.dialog" />
+    <Content Include="**/*.lg" />
+    <Content Include="**/*.lu" />
+    <Content Include="**/*.schema" />
+    <Content Include="**/*.uischema" />
+    <Content Include="**/*.qna" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Schemas\BotBuilderCommunity.SendActivity.schema" />
+    <None Remove="Schemas\BotBuilderCommunity.SendActivity.uischema" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\package-icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
