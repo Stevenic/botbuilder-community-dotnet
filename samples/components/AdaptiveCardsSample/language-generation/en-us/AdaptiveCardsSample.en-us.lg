@@ -1,0 +1,19 @@
+[import](common.lg)
+
+# SendActivity_Welcome
+- ${WelcomeUser()}
+
+# SendActivity_inpHFo()
+[Activity
+    Text = Welcome to the Adaptive Cards Sample bot... Send "hello" to get a new adaptive card.
+]
+
+# SendActivity_HAq626()
+[Activity
+    Text = Due date updated
+]
+
+# SendActivity_nRTQYp()
+[Activity
+    Text = Due date updated
+]

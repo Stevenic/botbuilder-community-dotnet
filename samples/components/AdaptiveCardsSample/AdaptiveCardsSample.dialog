@@ -1,0 +1,90 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "$designer": {
+      "name": "AdaptiveCardsSample",
+      "description": "",
+      "id": "DWSRCT"
+    }
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "zBDDt9"
+      },
+      "actions": [
+        {
+          "$kind": "BotBuilderCommunity.GetAdaptiveCardTemplate",
+          "$designer": {
+            "id": "ehNxOW"
+          },
+          "cacheTemplate": true,
+          "cacheExpiration": 900,
+          "url": "https://templates.adaptivecards.io/graph.microsoft.com/Profile.json?sampleData=true",
+          "resultProperty": "turn.template"
+        },
+        {
+          "$kind": "BotBuilderCommunity.SendAdaptiveCard",
+          "$designer": {
+            "id": "LzqHbk"
+          },
+          "template": "=turn.template",
+          "data": "=turn.template.$sampleData"
+        }
+      ]
+    },
+    {
+      "$kind": "BotBuilderCommunity.OnActionSubmit",
+      "$designer": {
+        "id": "bJSdEC"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "nRTQYp"
+          },
+          "activity": "${SendActivity_nRTQYp()}"
+        }
+      ]
+    },
+    {
+      "$kind": "BotBuilderCommunity.OnActionExecute",
+      "$designer": {
+        "id": "nKTxWd"
+      },
+      "verb": "submit"
+    },
+    {
+      "$kind": "BotBuilderCommunity.OnDataQuery",
+      "$designer": {
+        "id": "Szodoe"
+      },
+      "dataset": "mydataset",
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "S0kgBd"
+          },
+          "responseType": "json",
+          "resultProperty": "dialog.results"
+        },
+        {
+          "$kind": "BotBuilderCommunity.SendDataQueryResponse",
+          "$designer": {
+            "id": "LTMV0L"
+          },
+          "results": "=dialog.results"
+        }
+      ]
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "generator": "AdaptiveCardsSample.lg",
+  "id": "AdaptiveCardsSample",
+  "recognizer": "AdaptiveCardsSample.lu.qna"
+}
