@@ -17,3 +17,8 @@
 [Activity
     Text = Due date updated
 ]
+
+# SendActivity_xTMg7U()
+[Activity
+    Text = Wlecome to my bot
+]

@@ -17,7 +17,7 @@
     <CodeAnalysisRuleSet>..\core\Microsoft.BotFramework.Composer.Core.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Bot.Builder.Community.Components.AdaptiveCards" Version="1.0.4-preview" />
+    <PackageReference Include="Bot.Builder.Community.Components.AdaptiveCards" Version="1.0.5-preview" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.2" />
     <PackageReference Include="Microsoft.Bot.Builder" Version="4.12.2" />
     <PackageReference Include="Microsoft.Bot.Builder.AI.Luis" Version="4.12.2" />

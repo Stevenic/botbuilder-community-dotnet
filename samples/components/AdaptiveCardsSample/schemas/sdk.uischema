@@ -2,7 +2,7 @@
   "$schema": "https://schemas.botframework.com/schemas/ui/v1.0/ui.schema",
   "BotBuilderCommunity.CreateAdaptiveCard": {
     "flow": {
-      "body": "=action.template",
+      "body": "=if(isObject(action.template), '(Custom Template)', action.template)",
       "footer": {
         "description": "= (Card)",
         "property": "=action.resultProperty",
@@ -11,6 +11,7 @@
       "widget": "ActionCard"
     },
     "form": {
+      "helpLink": "https://adaptivecards.io/designer/",
       "label": "Create an Adaptive Card",
       "order": [
         "template",
@@ -175,7 +176,7 @@
   },
   "BotBuilderCommunity.SendAdaptiveCard": {
     "flow": {
-      "body": "=action.template",
+      "body": "=if(isObject(action.template), '(Custom Template)', action.template)",
       "footer": {
         "description": "= (Activity ID)",
         "property": "=action.activityIdProperty",
@@ -185,6 +186,7 @@
       "widget": "ActionCard"
     },
     "form": {
+      "helpLink": "https://adaptivecards.io/designer/",
       "label": "Send an Adaptive Card",
       "order": [
         "template",
@@ -249,10 +251,11 @@
   },
   "BotBuilderCommunity.UpdateAdaptiveCard": {
     "flow": {
-      "body": "=action.template",
+      "body": "=if(isObject(action.template), '(Custom Template)', action.template)",
       "widget": "ActionCard"
     },
     "form": {
+      "helpLink": "https://adaptivecards.io/designer/",
       "label": "Update an existing Adaptive Card",
       "order": [
         "template",

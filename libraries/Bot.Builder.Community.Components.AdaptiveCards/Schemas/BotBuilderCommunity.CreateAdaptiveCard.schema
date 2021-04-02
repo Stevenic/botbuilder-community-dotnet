@@ -34,8 +34,7 @@
     "data": {
       "$ref": "schema:#/definitions/objectExpression",
       "title": "Data",
-      "description": "Data object used when rendering the cards template. Defaults to an empty object.",
-      "default": "={}"
+      "description": "Data object used when rendering the cards template. Defaults to an empty object."
     },
     "resultProperty": {
       "$ref": "schema:#/definitions/stringExpression",

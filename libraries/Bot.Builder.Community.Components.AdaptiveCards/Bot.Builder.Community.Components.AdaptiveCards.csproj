@@ -10,7 +10,7 @@
     <Description>Composer triggers and actions for working with Adaptive Cards.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Stevenic/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Components.AdaptiveCards</PackageProjectUrl>
-    <Version>1.0.4-preview</Version>
+    <Version>1.0.5-preview</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>bf-component</PackageTags>
     <ContentTargetFolders>content</ContentTargetFolders>
@@ -55,11 +55,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\LICENSE" Link="LICENSE">
+    <None Include="..\..\LICENSE" Link="LICENSE">
       <PackagePath></PackagePath>
       <Pack>True</Pack>
     </None>
-    <None Include="..\package-icon.png" Link="package-icon.png">
+    <None Include="..\..\package-icon.png" Link="package-icon.png">
       <PackagePath></PackagePath>
       <Pack>True</Pack>
     </None>

@@ -376,7 +376,7 @@
       ],
       "$package": {
         "name": "Bot.Builder.Community.Components.AdaptiveCards",
-        "version": "1.0.4-preview"
+        "version": "1.0.5-preview"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -413,8 +413,7 @@
         "data": {
           "$ref": "#/definitions/objectExpression",
           "title": "Data",
-          "description": "Data object used when rendering the cards template. Defaults to an empty object.",
-          "default": "={}"
+          "description": "Data object used when rendering the cards template. Defaults to an empty object."
         },
         "resultProperty": {
           "$ref": "#/definitions/stringExpression",
@@ -447,7 +446,7 @@
       ],
       "$package": {
         "name": "Bot.Builder.Community.Components.AdaptiveCards",
-        "version": "1.0.4-preview"
+        "version": "1.0.5-preview"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -520,7 +519,7 @@
       ],
       "$package": {
         "name": "Bot.Builder.Community.Components.AdaptiveCards",
-        "version": "1.0.4-preview"
+        "version": "1.0.5-preview"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -594,7 +593,7 @@
       ],
       "$package": {
         "name": "Bot.Builder.Community.Components.AdaptiveCards",
-        "version": "1.0.4-preview"
+        "version": "1.0.5-preview"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -663,7 +662,7 @@
       ],
       "$package": {
         "name": "Bot.Builder.Community.Components.AdaptiveCards",
-        "version": "1.0.4-preview"
+        "version": "1.0.5-preview"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -736,7 +735,7 @@
       ],
       "$package": {
         "name": "Bot.Builder.Community.Components.AdaptiveCards",
-        "version": "1.0.4-preview"
+        "version": "1.0.5-preview"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -836,7 +835,7 @@
       ],
       "$package": {
         "name": "Bot.Builder.Community.Components.AdaptiveCards",
-        "version": "1.0.4-preview"
+        "version": "1.0.5-preview"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -873,8 +872,7 @@
         "data": {
           "$ref": "#/definitions/objectExpression",
           "title": "Data",
-          "description": "Data object used when rendering the cards template. Defaults to an empty object.",
-          "default": "={}"
+          "description": "Data object used when rendering the cards template. Defaults to an empty object."
         },
         "activityIdProperty": {
           "$ref": "#/definitions/stringExpression",
@@ -906,7 +904,7 @@
       ],
       "$package": {
         "name": "Bot.Builder.Community.Components.AdaptiveCards",
-        "version": "1.0.4-preview"
+        "version": "1.0.5-preview"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -960,7 +958,7 @@
       ],
       "$package": {
         "name": "Bot.Builder.Community.Components.AdaptiveCards",
-        "version": "1.0.4-preview"
+        "version": "1.0.5-preview"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -997,8 +995,7 @@
         "data": {
           "$ref": "#/definitions/objectExpression",
           "title": "Data",
-          "description": "Data object used when rendering the cards template. Defaults to an empty object.",
-          "default": "={}"
+          "description": "Data object used when rendering the cards template. Defaults to an empty object."
         },
         "activityId": {
           "$ref": "#/definitions/stringExpression",

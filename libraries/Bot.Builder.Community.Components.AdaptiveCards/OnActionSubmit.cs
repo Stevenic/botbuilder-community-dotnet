@@ -38,7 +38,7 @@ namespace Bot.Builder.Community.Components.AdaptiveCards
             // Filter to messages with empty text and a value of type "object".
             return Expression.AndExpression(
                 base.CreateExpression(),
-                Expression.Parse($"empty({TurnPath.Activity}.text)"),
+                Expression.Parse($"length({TurnPath.Activity}.text) == 0"),
                 Expression.Parse($"isObject({TurnPath.Activity}.value)"));
         }
     }

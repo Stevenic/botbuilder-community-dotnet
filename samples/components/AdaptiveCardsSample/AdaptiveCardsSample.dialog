@@ -11,74 +11,139 @@
   "defaultResultProperty": "dialog.result",
   "triggers": [
     {
-      "$kind": "Microsoft.OnUnknownIntent",
+      "$kind": "Microsoft.OnConversationUpdateActivity",
       "$designer": {
-        "id": "zBDDt9"
+        "id": "FD0wdf"
       },
       "actions": [
         {
-          "$kind": "BotBuilderCommunity.GetAdaptiveCardTemplate",
+          "$kind": "Microsoft.Foreach",
           "$designer": {
-            "id": "ehNxOW"
+            "name": "Loop: for each item",
+            "description": "",
+            "id": "f9AoLT"
           },
-          "cacheTemplate": true,
-          "cacheExpiration": 900,
-          "url": "https://templates.adaptivecards.io/graph.microsoft.com/Profile.json?sampleData=true",
-          "resultProperty": "turn.template"
-        },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "name": "Branch: if/else",
+                "description": "",
+                "id": "Rt6TVe"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "name": "Send a response",
+                    "description": "",
+                    "id": "xTMg7U"
+                  },
+                  "activity": "${SendActivity_xTMg7U()}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "UdZm1E"
+      },
+      "actions": [
         {
           "$kind": "BotBuilderCommunity.SendAdaptiveCard",
           "$designer": {
-            "id": "LzqHbk"
+            "id": "Ygixra",
+            "name": "Send Menu"
           },
-          "template": "=turn.template",
-          "data": "=turn.template.$sampleData"
+          "template": {
+            "type": "AdaptiveCard",
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "version": "1.2",
+            "body": [
+              {
+                "type": "Container",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "${title}",
+                    "wrap": true,
+                    "size": "Large"
+                  }
+                ],
+                "minHeight": "40px",
+                "verticalContentAlignment": "Center",
+                "style": "accent",
+                "bleed": true
+              },
+              {
+                "type": "Container",
+                "items": [
+                  {
+                    "type": "Container",
+                    "$data": "${items}",
+                    "separator": true,
+                    "items": [
+                      {
+                        "type": "RichTextBlock",
+                        "inlines": [
+                          {
+                            "type": "TextRun",
+                            "size": "medium",
+                            "text": "${title}",
+                            "selectAction": {
+                              "type": "Action.Submit",
+                              "data": {
+                                "cardName": "menu",
+                                "verb": "${verb}"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "minHeight": "30px",
+                    "verticalContentAlignment": "Center"
+                  }
+                ]
+              }
+            ]
+          },
+          "data": {
+            "title": "Adaptive Cards Sample",
+            "items": [
+              {
+                "title": "Sending a card",
+                "verb": "SendCard"
+              },
+              {
+                "title": "Remote templates",
+                "verb": "RemoteTemplates"
+              }
+            ]
+          }
         }
       ]
     },
     {
-      "$kind": "BotBuilderCommunity.OnActionSubmit",
+      "$kind": "Microsoft.OnMessageActivity",
       "$designer": {
-        "id": "bJSdEC"
+        "id": "yWv8zW"
       },
+      "condition": "=length(turn.activity.text) == 0 && isObject(turn.activity.value)",
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.TraceActivity",
           "$designer": {
-            "id": "nRTQYp"
+            "id": "xUCV0L"
           },
-          "activity": "${SendActivity_nRTQYp()}"
-        }
-      ]
-    },
-    {
-      "$kind": "BotBuilderCommunity.OnActionExecute",
-      "$designer": {
-        "id": "nKTxWd"
-      },
-      "verb": "submit"
-    },
-    {
-      "$kind": "BotBuilderCommunity.OnDataQuery",
-      "$designer": {
-        "id": "Szodoe"
-      },
-      "dataset": "mydataset",
-      "actions": [
-        {
-          "$kind": "Microsoft.HttpRequest",
-          "$designer": {
-            "id": "S0kgBd"
-          },
-          "responseType": "json",
-          "resultProperty": "dialog.results"
-        },
-        {
-          "$kind": "BotBuilderCommunity.SendDataQueryResponse",
-          "$designer": {
-            "id": "LTMV0L"
-          },
-          "results": "=dialog.results"
+          "name": "Action.Submit",
+          "value": "turn.activity.value"
         }
       ]
     }

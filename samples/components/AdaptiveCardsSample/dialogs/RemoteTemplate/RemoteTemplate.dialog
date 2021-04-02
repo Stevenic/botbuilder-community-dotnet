@@ -1,0 +1,43 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "gV40GD",
+    "name": "RemoteTemplate",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "wzwXi5"
+      },
+      "actions": [
+        {
+          "$kind": "BotBuilderCommunity.GetAdaptiveCardTemplate",
+          "$designer": {
+            "id": "ohISex"
+          },
+          "cacheTemplate": true,
+          "cacheExpiration": 900,
+          "url": "https://templates.adaptivecards.io/graph.microsoft.com/Profile.json?sampleData=true",
+          "resultProperty": "turn.template"
+        },
+        {
+          "$kind": "BotBuilderCommunity.SendAdaptiveCard",
+          "$designer": {
+            "id": "WH51eq"
+          },
+          "data": "=turn.template.$sampleData",
+          "template": "=turn.template"
+        }
+      ]
+    }
+  ],
+  "generator": "RemoteTemplate.lg",
+  "recognizer": "RemoteTemplate.lu.qna",
+  "id": "RemoteTemplate"
+}
