@@ -17,6 +17,14 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "a0H7AZ"
+          },
+          "activityProcessed": true,
+          "dialog": "=\"MyDialog\""
+        },
+        {
           "$kind": "Microsoft.Foreach",
           "$designer": {
             "name": "Loop: for each item",
@@ -127,6 +135,22 @@
               }
             ]
           }
+        },
+        {
+          "$kind": "BotBuilderCommunity.GetAdaptiveCardTemplate",
+          "$designer": {
+            "id": "90rJiE"
+          },
+          "cacheTemplate": true,
+          "cacheExpiration": 900,
+          "resultProperty": "dialog.template"
+        },
+        {
+          "$kind": "BotBuilderCommunity.SendAdaptiveCard",
+          "$designer": {
+            "id": "7cONBR"
+          },
+          "template": "=dialog.template"
         }
       ]
     },

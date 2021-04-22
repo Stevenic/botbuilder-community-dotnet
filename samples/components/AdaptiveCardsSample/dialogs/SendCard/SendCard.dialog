@@ -15,7 +15,34 @@
         "description": "",
         "id": "koWruW"
       },
-      "actions": []
+      "actions": [
+        {
+          "$kind": "BotBuilderCommunity.GetAdaptiveCardTemplate",
+          "$designer": {
+            "id": "zP3xc0"
+          },
+          "cacheTemplate": true,
+          "cacheExpiration": 900,
+          "resultProperty": "=turn.template"
+        },
+        {
+          "$kind": "BotBuilderCommunity.CreateAdaptiveCard",
+          "$designer": {
+            "id": "Wkq26N"
+          },
+          "resultProperty": "turn.card",
+          "template": "=turn.template"
+        },
+        {
+          "$kind": "BotBuilderCommunity.SendActionExecuteResponse",
+          "$designer": {
+            "id": "P2RFVZ"
+          },
+          "statusCode": 200,
+          "type": "message",
+          "value": "=turn.card"
+        }
+      ]
     }
   ],
   "generator": "SendCard.lg",

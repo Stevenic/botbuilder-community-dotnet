@@ -22,3 +22,8 @@
 [Activity
     Text = Wlecome to my bot
 ]
+
+# SendActivity_GCUZWo()
+[Activity
+    Text = I don't understand
+]
